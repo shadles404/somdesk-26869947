@@ -34,19 +34,19 @@ const Index = () => {
     {
       name: "Eye Clinic Management System",
       description: "A comprehensive solution for managing patient records and appointments.",
-      image: "photo-1518770660439-4636190af475",
+      image: "https://images.unsplash.com/photo-1518770660439-4636190af475",
       category: "Healthcare"
     },
     {
       name: "Smart Inventory System",
       description: "Automated inventory tracking and management solution.",
-      image: "photo-1461749280684-dccba630e2f6",
+      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6",
       category: "Business"
     },
     {
       name: "School Management Platform",
       description: "Complete educational institution management system.",
-      image: "photo-1485827404703-89b55fcc595e",
+      image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e",
       category: "Education"
     }
   ];
@@ -114,9 +114,15 @@ const Index = () => {
           <h2 className="text-3xl font-bold text-center mb-12">Our Portfolio</h2>
           <div className="grid md:grid-cols-3 gap-8">
             {portfolio.map((project, index) => (
-              <Card key={index} className="bg-gray-900 border-gray-800">
+              <Card key={index} className="bg-gray-900 border-gray-800 overflow-hidden">
                 <CardHeader>
-                  <div className="aspect-video bg-gray-800 rounded-lg mb-4"></div>
+                  <div className="aspect-video mb-4 overflow-hidden rounded-lg">
+                    <img 
+                      src={project.image} 
+                      alt={project.name}
+                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
                   <CardTitle>{project.name}</CardTitle>
                 </CardHeader>
                 <CardContent>
