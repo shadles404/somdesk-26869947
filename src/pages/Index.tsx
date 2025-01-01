@@ -16,17 +16,20 @@ const Index = () => {
     {
       icon: <Code className="w-12 h-12 text-purple-500" />,
       title: "Software Development",
-      description: "Custom software solutions tailored to your business needs with cutting-edge technologies."
+      description: "Custom software solutions tailored to your business needs with cutting-edge technologies.",
+      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6"
     },
     {
       icon: <Computer className="w-12 h-12 text-purple-500" />,
       title: "Computer Repair & Installation",
-      description: "Professional computer repair and installation services with quick turnaround times."
+      description: "Professional computer repair and installation services with quick turnaround times.",
+      image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b"
     },
     {
       icon: <Printer className="w-12 h-12 text-purple-500" />,
       title: "Printer & CCTV Camera Repair",
-      description: "Expert repair services for printers and CCTV systems to keep your equipment running smoothly."
+      description: "Expert repair services for printers and CCTV systems to keep your equipment running smoothly.",
+      image: "https://images.unsplash.com/photo-1601524909162-ae8725290836"
     }
   ];
 
@@ -94,7 +97,14 @@ const Index = () => {
           <h2 className="text-3xl font-bold text-center mb-12">Our Services</h2>
           <div className="grid md:grid-cols-3 gap-8">
             {services.map((service, index) => (
-              <Card key={index} className="bg-gray-900 border-gray-800 hover:border-purple-500 transition-colors">
+              <Card key={index} className="bg-gray-900 border-gray-800 hover:border-purple-500 transition-colors overflow-hidden">
+                <div className="aspect-video w-full overflow-hidden">
+                  <img 
+                    src={service.image} 
+                    alt={service.title}
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
                 <CardHeader>
                   <div className="mb-4">{service.icon}</div>
                   <CardTitle>{service.title}</CardTitle>
