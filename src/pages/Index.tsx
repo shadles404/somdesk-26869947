@@ -55,22 +55,22 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white">
+    <div className="min-h-screen bg-gray-900 text-gray-100">
       {/* Header */}
       <header className="fixed top-0 w-full bg-gray-900/90 backdrop-blur-sm z-50 border-b border-gray-800">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center">
-              <CircuitBoard className="w-8 h-8 text-purple-500" />
-              <span className="ml-2 text-xl font-bold">Somdesk</span>
+              <CircuitBoard className="w-8 h-8 text-purple-400" />
+              <span className="ml-2 text-xl font-bold text-gray-100">Somdesk</span>
             </div>
             <nav className="hidden md:flex space-x-8">
-              <a href="#" className="hover:text-purple-500 transition-colors">Home</a>
-              <a href="#services" className="hover:text-purple-500 transition-colors">Services</a>
-              <a href="#portfolio" className="hover:text-purple-500 transition-colors">Portfolio</a>
-              <a href="#contact" className="hover:text-purple-500 transition-colors">Contact</a>
+              <a href="#" className="text-gray-300 hover:text-purple-400 transition-colors">Home</a>
+              <a href="#services" className="text-gray-300 hover:text-purple-400 transition-colors">Services</a>
+              <a href="#portfolio" className="text-gray-300 hover:text-purple-400 transition-colors">Portfolio</a>
+              <a href="#contact" className="text-gray-300 hover:text-purple-400 transition-colors">Contact</a>
             </nav>
-            <Button variant="outline" className="md:hidden">Menu</Button>
+            <Button variant="outline" className="md:hidden text-gray-300">Menu</Button>
           </div>
         </div>
       </header>
@@ -78,10 +78,10 @@ const Index = () => {
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-4">
         <div className="container mx-auto text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent animate-fade-in">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent animate-fade-in">
             Innovative Technology Solutions for a Smarter Future
           </h1>
-          <p className="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
             Empowering businesses with cutting-edge technology solutions that drive growth and innovation.
           </p>
           <Button onClick={scrollToServices} className="group">
@@ -94,10 +94,10 @@ const Index = () => {
       {/* Services Section */}
       <section id="services" ref={servicesRef} className="py-20 px-4 bg-gray-800">
         <div className="container mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12">Our Services</h2>
+          <h2 className="text-3xl font-bold text-center mb-12 text-gray-100">Our Services</h2>
           <div className="grid md:grid-cols-3 gap-8">
             {services.map((service, index) => (
-              <Card key={index} className="bg-gray-900 border-gray-800 hover:border-purple-500 transition-colors overflow-hidden">
+              <Card key={index} className="bg-gray-900 border-gray-800 hover:border-purple-400 transition-colors overflow-hidden">
                 <div className="aspect-video w-full overflow-hidden">
                   <img 
                     src={service.image} 
@@ -107,10 +107,10 @@ const Index = () => {
                 </div>
                 <CardHeader>
                   <div className="mb-4">{service.icon}</div>
-                  <CardTitle>{service.title}</CardTitle>
+                  <CardTitle className="text-gray-100">{service.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <CardDescription className="text-gray-400">{service.description}</CardDescription>
+                  <CardDescription className="text-gray-300">{service.description}</CardDescription>
                 </CardContent>
               </Card>
             ))}
@@ -121,7 +121,7 @@ const Index = () => {
       {/* Portfolio Section */}
       <section id="portfolio" className="py-20 px-4">
         <div className="container mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12">Our Portfolio</h2>
+          <h2 className="text-3xl font-bold text-center mb-12 text-gray-100">Our Portfolio</h2>
           <div className="grid md:grid-cols-3 gap-8">
             {portfolio.map((project, index) => (
               <Card key={index} className="bg-gray-900 border-gray-800 overflow-hidden">
@@ -133,11 +133,11 @@ const Index = () => {
                       className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                     />
                   </div>
-                  <CardTitle>{project.name}</CardTitle>
+                  <CardTitle className="text-gray-100">{project.name}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <CardDescription className="text-gray-400">{project.description}</CardDescription>
-                  <Button variant="outline" className="mt-4">Learn More</Button>
+                  <CardDescription className="text-gray-300">{project.description}</CardDescription>
+                  <Button variant="outline" className="mt-4 text-gray-300 hover:text-gray-100">Learn More</Button>
                 </CardContent>
               </Card>
             ))}
@@ -148,47 +148,47 @@ const Index = () => {
       {/* Contact Section */}
       <section id="contact" className="py-20 px-4 bg-gray-800">
         <div className="container mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12">Contact Us</h2>
+          <h2 className="text-3xl font-bold text-center mb-12 text-gray-100">Contact Us</h2>
           <div className="grid md:grid-cols-2 gap-12">
             <div>
               <div className="flex items-center mb-6">
-                <Mail className="w-6 h-6 text-purple-500 mr-3" />
-                <span>info@somdesk.com</span>
+                <Mail className="w-6 h-6 text-purple-400 mr-3" />
+                <span className="text-gray-300">info@somdesk.com</span>
               </div>
               <div className="flex items-center mb-6">
-                <Phone className="w-6 h-6 text-purple-500 mr-3" />
-                <span>+252618458742</span>
+                <Phone className="w-6 h-6 text-purple-400 mr-3" />
+                <span className="text-gray-300">+252618458742</span>
               </div>
               <div className="flex space-x-4 mt-8">
-                <Button variant="outline" size="icon">
+                <Button variant="outline" size="icon" className="text-gray-300 hover:text-gray-100">
                   <Github className="w-4 h-4" />
                 </Button>
-                <Button variant="outline" size="icon">
+                <Button variant="outline" size="icon" className="text-gray-300 hover:text-gray-100">
                   <Linkedin className="w-4 h-4" />
                 </Button>
-                <Button variant="outline" size="icon">
+                <Button variant="outline" size="icon" className="text-gray-300 hover:text-gray-100">
                   <Twitter className="w-4 h-4" />
                 </Button>
               </div>
             </div>
             <div className="space-y-4">
               <div>
-                <Label htmlFor="name">Name</Label>
-                <Input id="name" className="bg-gray-900 border-gray-800" />
+                <Label htmlFor="name" className="text-gray-300">Name</Label>
+                <Input id="name" className="bg-gray-900 border-gray-800 text-gray-100" />
               </div>
               <div>
-                <Label htmlFor="email">Email</Label>
-                <Input id="email" type="email" className="bg-gray-900 border-gray-800" />
+                <Label htmlFor="email" className="text-gray-300">Email</Label>
+                <Input id="email" type="email" className="bg-gray-900 border-gray-800 text-gray-100" />
               </div>
               <div>
-                <Label htmlFor="subject">Subject</Label>
-                <Input id="subject" className="bg-gray-900 border-gray-800" />
+                <Label htmlFor="subject" className="text-gray-300">Subject</Label>
+                <Input id="subject" className="bg-gray-900 border-gray-800 text-gray-100" />
               </div>
               <div>
-                <Label htmlFor="message">Message</Label>
+                <Label htmlFor="message" className="text-gray-300">Message</Label>
                 <textarea
                   id="message"
-                  className="w-full h-32 px-3 py-2 text-sm bg-gray-900 border border-gray-800 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
+                  className="w-full h-32 px-3 py-2 text-sm bg-gray-900 border border-gray-800 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-400 text-gray-100"
                 />
               </div>
               <Button className="w-full">Send Message</Button>
@@ -202,14 +202,14 @@ const Index = () => {
         <div className="container mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex items-center mb-4 md:mb-0">
-              <CircuitBoard className="w-6 h-6 text-purple-500" />
-              <span className="ml-2 font-bold">Somdesk</span>
+              <CircuitBoard className="w-6 h-6 text-purple-400" />
+              <span className="ml-2 font-bold text-gray-100">Somdesk</span>
             </div>
             <div className="flex space-x-8 mb-4 md:mb-0">
-              <a href="#" className="hover:text-purple-500 transition-colors">Home</a>
-              <a href="#services" className="hover:text-purple-500 transition-colors">Services</a>
-              <a href="#portfolio" className="hover:text-purple-500 transition-colors">Portfolio</a>
-              <a href="#contact" className="hover:text-purple-500 transition-colors">Contact</a>
+              <a href="#" className="text-gray-300 hover:text-purple-400 transition-colors">Home</a>
+              <a href="#services" className="text-gray-300 hover:text-purple-400 transition-colors">Services</a>
+              <a href="#portfolio" className="text-gray-300 hover:text-purple-400 transition-colors">Portfolio</a>
+              <a href="#contact" className="text-gray-300 hover:text-purple-400 transition-colors">Contact</a>
             </div>
             <div className="text-sm text-gray-400">
               © 2024 Somdesk. All rights reserved.
