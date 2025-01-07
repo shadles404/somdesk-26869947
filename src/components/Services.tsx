@@ -1,32 +1,37 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card";
 import { Code, Computer, Printer } from "lucide-react";
+import { useLanguage } from "./LanguageContext";
+import { useTranslations } from "../utils/translations";
 
 export const Services = () => {
+  const { language } = useLanguage();
+  const t = useTranslations(language);
+
   const services = [
     {
       icon: <Code className="w-12 h-12 text-purple-500" />,
-      title: "Software Development",
-      description: "Custom software solutions tailored to your business needs with cutting-edge technologies.",
-      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6"
+      title: t.softwareDev,
+      description: t.softwareDesc,
+      image: "https://i.ibb.co/WHnsMkC/software-dev.jpg"
     },
     {
       icon: <Computer className="w-12 h-12 text-purple-500" />,
-      title: "Computer Repair & Installation",
-      description: "Professional computer repair and installation services with quick turnaround times.",
-      image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b"
+      title: t.computerRepair,
+      description: t.computerDesc,
+      image: "https://i.ibb.co/TtcmnCV/computer-repair.jpg"
     },
     {
       icon: <Printer className="w-12 h-12 text-purple-500" />,
-      title: "Printer & CCTV Camera Repair",
-      description: "Expert repair services for printers and CCTV systems to keep your equipment running smoothly.",
-      image: "https://images.unsplash.com/photo-1601524909162-ae8725290836"
+      title: t.printerRepair,
+      description: t.printerDesc,
+      image: "https://i.ibb.co/ysCc024/printer-repair.jpg"
     }
   ];
 
   return (
     <section id="services" className="py-20 px-4 bg-secondary">
       <div className="container mx-auto">
-        <h2 className="text-3xl font-bold text-center mb-12 text-foreground">Our Services</h2>
+        <h2 className="text-3xl font-bold text-center mb-12 text-foreground">{t.ourServices}</h2>
         <div className="grid md:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <Card key={index} className="bg-background border-border hover:border-purple-400 transition-colors overflow-hidden">
