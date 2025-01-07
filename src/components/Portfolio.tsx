@@ -6,20 +6,23 @@ export const Portfolio = () => {
     {
       name: "Eye Clinic Management System",
       description: "A comprehensive solution for managing patient records and appointments.",
-      image: "https://images.unsplash.com/photo-1518770660439-4636190af475",
-      category: "Healthcare"
+      image: "https://i.ibb.co/LZY0hVF/eye-clinic.jpg",
+      category: "Healthcare",
+      link: "https://someye.netlify.app"
     },
     {
-      name: "Smart Inventory System",
+      name: "Cargo Management System",
       description: "Automated inventory tracking and management solution.",
-      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6",
-      category: "Business"
+      image: "https://i.ibb.co/Rb2mYSV/cargo.jpg",
+      category: "Business",
+      link: "https://somcargo.netlify.app"
     },
     {
-      name: "School Management Platform",
-      description: "Complete educational institution management system.",
-      image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e",
-      category: "Education"
+      name: "Birth Certificate Management System",
+      description: "Complete birth certificate management system.",
+      image: "https://i.ibb.co/BCz1Xwt/birth.jpg",
+      category: "Government",
+      link: "https://sombirth.netlify.app"
     }
   ];
 
@@ -42,9 +45,11 @@ export const Portfolio = () => {
               </CardHeader>
               <CardContent>
                 <CardDescription className="text-foreground/70">{project.description}</CardDescription>
-                <Button variant="outline" className="mt-4 text-black dark:text-black bg-white hover:bg-gray-100">
-                  Learn More
-                </Button>
+                <a href={project.link} target="_blank" rel="noopener noreferrer">
+                  <Button variant="outline" className="mt-4 text-black dark:text-black bg-white hover:bg-gray-100">
+                    Learn More
+                  </Button>
+                </a>
               </CardContent>
             </Card>
           ))}
